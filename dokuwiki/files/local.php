@@ -8,7 +8,7 @@
 $conf['title']       = "{% pillar.get('dokuwiki','DokuWiki') %}";        //what to show in the title
 $conf['start']       = "{% pillar.get('dokuwiki','start') %}";           //name of start page
 $conf['lang']        = "{% pillar.get('dokuwiki','en') %}";              //your language
-$conf['template']    = "{% pillar.get('dokuwiki','dokuwiki') %}";         //see lib/tpl directory
+$conf['template']    = "{% pillar.get('dokuwiki','dokuwiki') %}";        //see lib/tpl directory
 $conf['tagline']     = "{% pillar.get('dokuwiki','') %}";                //tagline in header (if template supports it)
 $conf['sidebar']     = "{% pillar.get('dokuwiki','sidebar') %}";         //name of sidebar in root namespace (if template supports it)
 $conf['license']     = "{% pillar.get('dokuwiki','cc-by-nc-sa') %}";     //see conf/license.php
@@ -29,9 +29,9 @@ $conf['typography']  = "{% pillar.get('dokuwiki',1) %}";                 //smart
 $conf['dformat']     = "{% pillar.get('dokuwiki','%Y/%m/%d %H:%M') %}";  //dateformat accepted by PHPs strftime() function
 $conf['signature']   = "{% pillar.get('dokuwiki',' --- //[[@MAIL@|@NAME@]] @DATE@//') %}"; //signature see wiki page for details
 $conf['showuseras']  = "{% pillar.get('dokuwiki','loginname') %}";       // 'loginname' users login name
-                                                                   // 'username' users full name
-                                                                   // 'email' e-mail address (will be obfuscated as per mailguard)
-                                                                   // 'email_link' e-mail address as a mailto: link (obfuscated)
+                                                                         // 'username' users full name
+                                                                         // 'email' e-mail address (will be obfuscated as per mailguard)
+                                                                         // 'email_link' e-mail address as a mailto: link (obfuscated)
 $conf['toptoclevel'] = "{% pillar.get('dokuwiki',1) %}";                 //Level starting with and below to include in AutoTOC (max. 5)
 $conf['tocminheads'] = "{% pillar.get('dokuwiki',3) %}";                 //Minimum amount of headlines that determines if a TOC is built
 $conf['maxtoclevel'] = "{% pillar.get('dokuwiki',3) %}";                 //Up to which level include into AutoTOC (max. 5)
@@ -42,36 +42,36 @@ $conf['useheading']  = "{% pillar.get('dokuwiki',0) %}";                 //use t
 $conf['sneaky_index']= "{% pillar.get('dokuwiki',0) %}";                 //check for namespace read permission in index view (0|1) (1 might cause unexpected behavior)
 $conf['hidepages']   = "{% pillar.get('dokuwiki','') %}";                //Regexp for pages to be skipped from RSS, Search and Recent Changes
 /* Authentication Settings */
-$conf['useacl']      = "{% pillar.get('dokuwiki',0) %}";                //Use Access Control Lists to restrict access?
-$conf['autopasswd']  = "{% pillar.get('dokuwiki',1) %}";                //autogenerate passwords and email them to user
-$conf['authtype']    = "{% pillar.get('dokuwiki','authplain') %}";      //which authentication backend should be used
-$conf['passcrypt']   = "{% pillar.get('dokuwiki','smd5') %}";           //Used crypt method (smd5,md5,sha1,ssha,crypt,mysql,my411)
-$conf['defaultgroup']= "{% pillar.get('dokuwiki','user') %}";           //Default groups new Users are added to
-$conf['superuser']   = "{% pillar.get('dokuwiki','!!not set!!') %}";    //The admin can be user or @group or comma separated list user1,@group1,user2
-$conf['manager']     = "{% pillar.get('dokuwiki','!!not set!!') %}";    //The manager can be user or @group or comma separated list user1,@group1,user2
-$conf['profileconfirm'] = "{% pillar.get('dokuwiki',1) %}";             //Require current password to confirm changes to user profile
-$conf['rememberme'] = "{% pillar.get('dokuwiki',1) %}";                 //Enable/disable remember me on login
-$conf['disableactions'] = "{% pillar.get('dokuwiki','') %}";            //comma separated list of actions to disable
-$conf['auth_security_timeout'] = "{% pillar.get('dokuwiki',900) %}";    //time (seconds) auth data is considered valid, set to 0 to recheck on every page view
-$conf['securecookie'] = "{% pillar.get('dokuwiki',1) %}";               //never send HTTPS cookies via HTTP
-$conf['remote']      = "{% pillar.get('dokuwiki',0) %}";                //Enable/disable remote interfaces
-$conf['remoteuser']  = "{% pillar.get('dokuwiki','!!not set !!') %}";   //user/groups that have access to remote interface (comma separated)
+$conf['useacl']      = "{% pillar.get('dokuwiki',0) %}";                 //Use Access Control Lists to restrict access?
+$conf['autopasswd']  = "{% pillar.get('dokuwiki',1) %}";                 //autogenerate passwords and email them to user
+$conf['authtype']    = "{% pillar.get('dokuwiki','authplain') %}";       //which authentication backend should be used
+$conf['passcrypt']   = "{% pillar.get('dokuwiki','smd5') %}";            //Used crypt method (smd5,md5,sha1,ssha,crypt,mysql,my411)
+$conf['defaultgroup']= "{% pillar.get('dokuwiki','user') %}";            //Default groups new Users are added to
+$conf['superuser']   = "{% pillar.get('dokuwiki','!!not set!!') %}";     //The admin can be user or @group or comma separated list user1,@group1,user2
+$conf['manager']     = "{% pillar.get('dokuwiki','!!not set!!') %}";     //The manager can be user or @group or comma separated list user1,@group1,user2
+$conf['profileconfirm'] = "{% pillar.get('dokuwiki',1) %}";              //Require current password to confirm changes to user profile
+$conf['rememberme'] = "{% pillar.get('dokuwiki',1) %}";                  //Enable/disable remember me on login
+$conf['disableactions'] = "{% pillar.get('dokuwiki','') %}";             //comma separated list of actions to disable
+$conf['auth_security_timeout'] = "{% pillar.get('dokuwiki',900) %}";     //time (seconds) auth data is considered valid, set to 0 to recheck on every page view
+$conf['securecookie'] = "{% pillar.get('dokuwiki',1) %}";                //never send HTTPS cookies via HTTP
+$conf['remote']      = "{% pillar.get('dokuwiki',0) %}";                 //Enable/disable remote interfaces
+$conf['remoteuser']  = "{% pillar.get('dokuwiki','!!not set !!') %}";    //user/groups that have access to remote interface (comma separated)
 /* Antispam Features */
-$conf['usewordblock']= "{% pillar.get('dokuwiki',1) %}";                //block spam based on words? 0|1
-$conf['relnofollow'] = "{% pillar.get('dokuwiki',1) %}";                //use rel="nofollow" for external links?
-$conf['indexdelay']  = "{% pillar.get('dokuwiki','60*60*24*5') %}";       //allow indexing after this time (seconds) default is 5 days
-$conf['mailguard']   = "{% pillar.get('dokuwiki','hex') %}";            //obfuscate email addresses against spam harvesters?
-                                                                  //valid entries are:
-                                                                  //  'visible' - replace @ with [at], . with [dot] and - with [dash]
-                                                                  //  'hex'     - use hex entities to encode the mail address
-                                                                  //  'none'    - do not obfuscate addresses
-$conf['iexssprotect']= "{% pillar.get('dokuwiki',1) %}";                // check for JavaScript and HTML in uploaded files 0|1
+$conf['usewordblock']= "{% pillar.get('dokuwiki',1) %}";                 //block spam based on words? 0|1
+$conf['relnofollow'] = "{% pillar.get('dokuwiki',1) %}";                 //use rel="nofollow" for external links?
+$conf['indexdelay']  = "{% pillar.get('dokuwiki','60*60*24*5') %}";      //allow indexing after this time (seconds) default is 5 days
+$conf['mailguard']   = "{% pillar.get('dokuwiki','hex') %}";             //obfuscate email addresses against spam harvesters?
+                                                                         //valid entries are:
+                                                                         //  'visible' - replace @ with [at], . with [dot] and - with [dash]
+                                                                         //  'hex'     - use hex entities to encode the mail address
+                                                                         //  'none'    - do not obfuscate addresses
+$conf['iexssprotect']= "{% pillar.get('dokuwiki',1) %}";                 // check for JavaScript and HTML in uploaded files 0|1
 /* Editing Settings */
-$conf['usedraft']    = "{% pillar.get('dokuwiki',1) %}";                //automatically save a draft while editing (0|1)
-$conf['htmlok']      = "{% pillar.get('dokuwiki',0) %}";                //may raw HTML be embedded? This may break layout and XHTML validity 0|1
-$conf['phpok']       = "{% pillar.get('dokuwiki',0) %}";                //may PHP code be embedded? Never do this on the internet! 0|1
-$conf['locktime']    = "{% pillar.get('dokuwiki','15*60') %}";            //maximum age for lockfiles (defaults to 15 minutes)
-$conf['cachetime']   = "{% pillar.get('dokuwiki','60*60*24') %}";         //maximum age for cachefile in seconds (defaults to a day)
+$conf['usedraft']    = "{% pillar.get('dokuwiki',1) %}";                 //automatically save a draft while editing (0|1)
+$conf['htmlok']      = "{% pillar.get('dokuwiki',0) %}";                 //may raw HTML be embedded? This may break layout and XHTML validity 0|1
+$conf['phpok']       = "{% pillar.get('dokuwiki',0) %}";                 //may PHP code be embedded? Never do this on the internet! 0|1
+$conf['locktime']    = "{% pillar.get('dokuwiki','15*60') %}";           //maximum age for lockfiles (defaults to 15 minutes)
+$conf['cachetime']   = "{% pillar.get('dokuwiki','60*60*24') %}";        //maximum age for cachefile in seconds (defaults to a day)
 /* Link Settings */
 // Set target to use when creating links - leave empty for same window
 $conf['target']['wiki']      = "{% pillar.get('dokuwiki','') %}";
@@ -88,8 +88,8 @@ $conf['jpg_quality'] = "{% pillar.get('dokuwiki','70') %}";             //qualit
 $conf['fetchsize']   = "{% pillar.get('dokuwiki',0) %}";                //maximum size (bytes) fetch.php may download from extern, disabled by default
 /* Notification Settings */
 $conf['subscribers'] = "{% pillar.get('dokuwiki',0) %}";                //enable change notice subscription support
-$conf['subscribe_time'] = "{% pillar.get('dokuwiki','24*60*60') %}";      //Time after which digests / lists are sent (in sec, default 1 day)
-                                         //Should be smaller than the time specified in recent_days
+$conf['subscribe_time'] = "{% pillar.get('dokuwiki','24*60*60') %}";    //Time after which digests / lists are sent (in sec, default 1 day)
+                                                                        //Should be smaller than the time specified in recent_days
 $conf['notify']      = "{% pillar.get('dokuwiki','') %}";               //send change info to this email (leave blank for nobody)
 $conf['registernotify'] = "{% pillar.get('dokuwiki','') %}";            //send info about newly registered users to this email (leave blank for nobody)
 $conf['mailfrom']    = "{% pillar.get('dokuwiki','') %}";               //use this email when sending mails
@@ -98,38 +98,38 @@ $conf['htmlmail']    = "{% pillar.get('dokuwiki',1) %}";                //send H
 /* Syndication Settings */
 $conf['sitemap']     = "{% pillar.get('dokuwiki',0) %}";                //Create a google sitemap? How often? In days.
 $conf['rss_type']    = "{% pillar.get('dokuwiki','rss1') %}";           //type of RSS feed to provide, by default:
-                                                                  //  'rss'  - RSS 0.91
-                                                                  //  'rss1' - RSS 1.0
-                                                                  //  'rss2' - RSS 2.0
-                                                                  //  'atom' - Atom 0.3
-                                                                  //  'atom1' - Atom 1.0
+                                                                        //  'rss'  - RSS 0.91
+                                                                        //  'rss1' - RSS 1.0
+                                                                        //  'rss2' - RSS 2.0
+                                                                        //  'atom' - Atom 0.3
+                                                                        //  'atom1' - Atom 1.0
 $conf['rss_linkto'] = "{% pillar.get('dokuwiki','diff') %}";            //what page RSS entries link to:
-                                                                  //  'diff'    - page showing revision differences
-                                                                  //  'page'    - the revised page itself
-                                                                  //  'rev'     - page showing all revisions
-                                                                  //  'current' - most recent revision of page
+                                                                        //  'diff'    - page showing revision differences
+                                                                        //  'page'    - the revised page itself
+                                                                        //  'rev'     - page showing all revisions
+                                                                        //  'current' - most recent revision of page
 $conf['rss_content'] = "{% pillar.get('dokuwiki','abstract') %}";       //what to put in the items by default?
-                                                                  //  'abstract' - plain text, first paragraph or so
-                                                                  //  'diff'     - plain text unified diff wrapped in <pre> tags
-                                                                  //  'htmldiff' - diff as HTML table
-                                                                  //  'html'     - the full page rendered in XHTML
+                                                                        //  'abstract' - plain text, first paragraph or so
+                                                                        //  'diff'     - plain text unified diff wrapped in <pre> tags
+                                                                        //  'htmldiff' - diff as HTML table
+                                                                        //  'html'     - the full page rendered in XHTML
 $conf['rss_media']   = "{% pillar.get('dokuwiki','both') %}";           //what should be listed?
-                                                                  //  'both'     - page and media changes
-                                                                  //  'pages'    - page changes only
-                                                                  //  'media'    - media changes only
-$conf['rss_update'] = "{% pillar.get('dokuwiki','5*60') %}";              //Update the RSS feed every n seconds (defaults to 5 minutes)
+                                                                        //  'both'     - page and media changes
+                                                                        //  'pages'    - page changes only
+                                                                        //  'media'    - media changes only
+$conf['rss_update'] = "{% pillar.get('dokuwiki','5*60') %}";            //Update the RSS feed every n seconds (defaults to 5 minutes)
 $conf['rss_show_summary'] = "{% pillar.get('dokuwiki',1) %}";           //Add revision summary to title? 0|1
 /* Advanced Settings */
 $conf['updatecheck'] = "{% pillar.get('dokuwiki',1) %}";                //automatically check for new releases?
 $conf['userewrite']  = "{% pillar.get('dokuwiki',0) %}";                //this makes nice URLs: 0: off 1: .htaccess 2: internal
 $conf['useslash']    = "{% pillar.get('dokuwiki',0) %}";                //use slash instead of colon? only when rewrite is on
 $conf['sepchar']     = "{% pillar.get('dokuwiki','_') %}";              //word separator character in page names; may be a
-                                                                  //  letter, a digit, '_', '-', or '.'.
+                                                                        //  letter, a digit, '_', '-', or '.'.
 $conf['canonical']   = "{% pillar.get('dokuwiki',0) %}";                //Should all URLs use full canonical http://... style?
 $conf['fnencode']    = "{% pillar.get('dokuwiki','url') %}";            //encode filenames (url|safe|utf-8)
 $conf['autoplural']  = "{% pillar.get('dokuwiki',0) %}";                //try (non)plural form of nonexisting files?
 $conf['compression'] = "{% pillar.get('dokuwiki','gz') %}";             //compress old revisions: (0: off) ('gz': gnuzip) ('bz2': bzip)
-                                                                  //  bz2 generates smaller files, but needs more cpu-power
+                                                                        //  bz2 generates smaller files, but needs more cpu-power
 $conf['gzip_output'] = "{% pillar.get('dokuwiki',0) %}";                //use gzip content encodeing for the output xhtml (if allowed by browser)
 $conf['compress']    = "{% pillar.get('dokuwiki',1) %}";                //Strip whitespaces and comments from Styles and JavaScript? 1|0
 $conf['cssdatauri']  = "{% pillar.get('dokuwiki',0) %}";                //Maximum byte size of small images to embed into CSS, won't work on IE<8
