@@ -1,0 +1,6 @@
+dokuwiki:
+  title: saltstack wiki
+  license: cc-by-sa
+  lang: en
+  useacl: 1
+  superuser: '@admin'
