@@ -13,6 +13,6 @@
         'data_path': '/var/lib/dokuwiki/data',
         'acl_path': '/var/lib/dokuwiki/acl',
         'config_path': '/etc/dokuwiki/',
-        'web_user': 'www-data',
+        'web_user': 'apache',
     },
 }, merge=salt['pillar.get']('dokuwiki:lookup')) %}
