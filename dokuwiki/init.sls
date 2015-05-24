@@ -18,7 +18,7 @@ local.php:
 users.auth.php:
   file.managed:
     - name: {{ dokuwiki.acl_path }}/users.auth.php
-    - user: www-data
+    - user: {{ dokuwiki.web_user }}
     - group: root
     - mode: 600
     - template: jinja
@@ -30,14 +30,14 @@ users.auth.php:
   file.symlink:
     - target: {{ dokuwiki.acl_path }}/users.auth.php
     - user: root
-    - group: www-data
+    - group: {{ dokuwiki.web_user }}
     - require:
       - file: users.auth.php
 
 acl.auth.php:
   file.managed:
     - name: {{ dokuwiki.acl_path }}/acl.auth.php
-    - user: www-data
+    - user: {{ dokuwiki.web_user }}
     - group: root
     - mode: 600
     - template: jinja
@@ -49,6 +49,6 @@ acl.auth.php:
   file.symlink:
     - target: {{ dokuwiki.acl_path }}/acl.auth.php
     - user: root
-    - group: www-data
+    - group: {{ dokuwiki.web_user }}
     - require:
       - file: acl.auth.php
