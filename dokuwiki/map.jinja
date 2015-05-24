@@ -1,6 +1,6 @@
 {% set dokuwiki = salt['grains.filter_by']({
     'Debian': {
-        'pkg': 'dokuwiki',
+        'pkgs': ['dokuwiki',],
         'install_path': '/usr/share/dokuwiki',
         'data_path': '/var/lib/dokuwiki/data',
         'acl_path': '/var/lib/dokuwiki/acl',
@@ -8,7 +8,7 @@
         'web_user': 'www-data',
     },
     'RedHat': {
-        'pkg': 'dokuwiki',
+        'pkgs': ['dokuwiki','dokuwiki-selinux',],
         'install_path': '/usr/share/dokuwiki',
         'data_path': '/var/lib/dokuwiki/data',
         'acl_path': '/var/lib/dokuwiki/acl',

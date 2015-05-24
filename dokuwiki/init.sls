@@ -2,7 +2,7 @@
 
 dokuwiki:
   pkg.installed:
-    - name: {{ dokuwiki.pkg }}
+    - pkgs: {{ dokuwiki.pkg }}
 
 local.php:
   file.managed:
