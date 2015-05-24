@@ -1,11 +1,12 @@
+{% from "dokuwiki/map.jinja" import dokuwiki with context %}
 
 dokuwiki:
   pkg.installed:
-    - name: dokuwiki
+    - name: {{ dokuwiki.pkg }}
 
 local.php:
   file.managed:
-    - name: /etc/dokuwiki/local.php
+    - name: {{ dokuwiki.config_path }}/local.php
     - user: root
     - group: root
     - mode: 644
@@ -16,7 +17,7 @@ local.php:
 
 users.auth.php:
   file.managed:
-    - name: /var/lib/dokuwiki/acl/users.auth.php
+    - name: {{ dokuwiki.acl_path }}/users.auth.php
     - user: www-data
     - group: root
     - mode: 600
@@ -25,9 +26,17 @@ users.auth.php:
     - require:
       - pkg: dokuwiki
 
+{{ dokuwiki.config_path }}users.auth.php:
+  file.symlink:
+    - target: {{ dokuwiki.acl_path }}/users.auth.php
+    - user: root
+    - group: www-data
+    - require:
+      - file: users.auth.php
+
 acl.auth.php:
   file.managed:
-    - name: /var/lib/dokuwiki/acl/acl.auth.php
+    - name: {{ dokuwiki.acl_path }}/acl.auth.php
     - user: www-data
     - group: root
     - mode: 600
@@ -35,3 +44,11 @@ acl.auth.php:
     - source: salt://dokuwiki/files/acl.auth.php
     - require:
       - pkg: dokuwiki
+
+{{ dokuwiki.config_path }}/acl.auth.php:
+  file.symlink:
+    - target: {{ dokuwiki.acl_path }}/acl.auth.php
+    - user: root
+    - group: www-data
+    - require:
+      - file: acl.auth.php

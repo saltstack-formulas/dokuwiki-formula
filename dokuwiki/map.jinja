@@ -1,0 +1,18 @@
+{% set dokuwiki = salt['grains.filter_by']({
+    'Debian': {
+        'pkg': 'dokuwiki',
+        'install_path': '/usr/share/dokuwiki',
+        'data_path': '/var/lib/dokuwiki/data',
+        'acl_path': '/var/lib/dokuwiki/acl',
+        'config_path': '/etc/dokuwiki',
+        'web_user': 'www-data',
+    },
+    'RedHat': {
+        'pkg': 'dokuwiki',
+        'install_path': '/usr/share/dokuwiki',
+        'data_path': '/var/lib/dokuwiki/data',
+        'acl_path': '/var/lib/dokuwiki/acl',
+        'config_path': '/etc/dokuwiki/',
+        'web_user': 'www-data',
+    },
+}, merge=salt['pillar.get']('dokuwiki:lookup')) %}
