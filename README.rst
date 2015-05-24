@@ -33,3 +33,18 @@ or
 
 * php.fpm
 * nginx
+
+
+Admin Password
+==============
+
+The default admin password is set in files/users.auth.php
+the password is admin
+
+after you log in you can change the password and copy over the
+/var/lib/dokuwiki/acl/users.auth.php in files/users.auth.php 
+
+.. TODO::
+
+    This needs to be generated/created from pillar data
+
