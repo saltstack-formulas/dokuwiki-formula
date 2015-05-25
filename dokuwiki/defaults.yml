@@ -1,0 +1,10 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+
+dokuwiki:
+  pkgs:
+    - dokuwiki
+  install_path: '/usr/share/dokuwiki'
+  data_path: '/var/lib/dokuwiki/data'
+  config_path: '/etc/dokuwiki'
+  web_user: 'www-data'
