@@ -6,5 +6,5 @@ https://github.com/saltstack-formulas/dokuwiki-formula
 ##}
 
 include:
-  - dokuwiki.package
-  - dokuwiki.file
+  - dokuwiki.install
+  - dokuwiki.config
