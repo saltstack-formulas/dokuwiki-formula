@@ -1,18 +1,24 @@
-{% set dokuwiki = salt['grains.filter_by']({
-    'Debian': {
-        'pkgs': ['dokuwiki',],
-        'install_path': '/usr/share/dokuwiki',
-        'data_path': '/var/lib/dokuwiki/data',
-        'acl_path': '/var/lib/dokuwiki/acl',
-        'config_path': '/etc/dokuwiki',
-        'web_user': 'www-data',
-    },
+# -*- coding: utf-8 -*-
+# vim: ft=jinja
+
+{## Start with  defaults from defaults.sls ##}
+{% import_yaml 'dokuwiki/defaults.yml' as default_settings %}
+
+{## setup variable using grains['os_family'] based logic ##}
+{% set os_family_map = salt['grains.filter_by']({
     'RedHat': {
         'pkgs': ['dokuwiki','dokuwiki-selinux',],
-        'install_path': '/usr/share/dokuwiki',
-        'data_path': '/var/lib/dokuwiki/data',
-        'acl_path': '/var/lib/dokuwiki/acl',
-        'config_path': '/etc/dokuwiki/',
         'web_user': 'apache',
     },
-}, merge=salt['pillar.get']('dokuwiki:lookup')) %}
+  grain="os_family")
+
+{## Merge the flavor_map to the default settings ##}
+{% do default_settings.dokuwiki.update(os_family_map) %}
+
+{## Merge in dokuwiki:lookup pillar ##}
+{% set dokuwiki_settings = salt['pillar.get'](
+        'dokuwiki:lookup',
+        default=default_settings.dokuwiki,
+        merge=True
+    )
+%}
